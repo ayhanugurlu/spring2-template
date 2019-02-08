@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.exeption.ExampleException;
 import com.example.model.Example;
 import com.example.model.input.ExampleInput;
 import com.example.model.output.ExampleOutput;
@@ -16,4 +17,6 @@ public interface ExampleService {
     List<ExampleOutput> exampleServiceGetAll();
 
     Optional<ExampleOutput> exampleServiceGetOne(Long id);
+
+    void exampleExceptionService() throws ExampleException;
 }
