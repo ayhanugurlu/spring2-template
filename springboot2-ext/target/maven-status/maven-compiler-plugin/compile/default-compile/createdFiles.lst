@@ -1,0 +1,3 @@
+com\au\example\ExtService.class
+com\au\example\model\output\ExampleExtOutput.class
+com\au\example\model\input\ExampleExtInput.class
