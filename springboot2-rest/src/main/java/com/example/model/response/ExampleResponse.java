@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Data
 public class ExampleResponse {
+    Long id;
     String var1;
     String var2;
     String var3;

@@ -2,6 +2,7 @@ package com.example.mapper;
 
 import com.example.model.Example;
 import com.example.model.input.ExampleInput;
+import com.example.model.output.ExampleOutput;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.ConfigurableMapper;
 import org.springframework.stereotype.Component;
@@ -17,5 +18,8 @@ public class ExampleServiceMapper extends ConfigurableMapper {
                 .byDefault()
                 .register();
 
+        factory.classMap(Example.class, ExampleOutput.class)
+                .byDefault()
+                .register();
     }
 }

@@ -5,6 +5,7 @@ package com.example.rest;
 import com.example.ExampleService;
 import com.example.exeption.ExampleException;
 import com.example.model.input.ExampleInput;
+import com.example.model.output.ExampleOutput;
 import com.example.model.request.ExampleRequest;
 import com.example.model.response.ExampleResponse;
 import io.swagger.annotations.ApiOperation;
@@ -24,6 +25,7 @@ import java.util.concurrent.ExecutionException;
  * Created by Ayhan.Ugurlu on 08/02/2019
  */
 @RestController
+@RequestMapping("api/v1")
 public class ExampleRestController {
 
     private static Logger logger = LoggerFactory.getLogger(ExampleRestController.class);
@@ -32,20 +34,21 @@ public class ExampleRestController {
     ExampleService exampleService;
 
     @Autowired
-    @Qualifier(value = "exampleServiceMapper")
+    @Qualifier(value = "exampleRestMapper")
     MapperFacade mapperFacade;
 
     @ApiOperation(value = "example rest save",
             notes = "example rest notes.<br/>")
-    @RequestMapping(value = "/sign-up", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping("exampleRest")
     public
     @ResponseBody
     ExampleResponse exampleRest(@ApiParam(value = "example rest request") @RequestBody ExampleRequest exampleRequest){
         logger.debug("exampleRest method start");
         ExampleInput exampleInput = mapperFacade.map(exampleRequest,ExampleInput.class);
-        exampleService.exampleServiceSave(exampleInput);
+        ExampleOutput exampleOutput =  exampleService.exampleServiceSave(exampleInput);
+        ExampleResponse response = mapperFacade.map(exampleOutput,ExampleResponse.class);
         logger.debug("exampleRest method finish");
-        return new ExampleResponse();
+        return response;
     }
 
 
