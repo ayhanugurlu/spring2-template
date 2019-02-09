@@ -3,7 +3,7 @@ package com.example.rest;
 
 
 import com.example.ExampleService;
-import com.example.exception.ExampleException;
+import com.example.exeption.ExampleException;
 import com.example.model.input.ExampleInput;
 import com.example.model.request.ExampleRequest;
 import com.example.model.response.ExampleResponse;
@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Ayhan.Ugurlu on 08/02/2019
@@ -38,12 +40,24 @@ public class ExampleRestController {
     @RequestMapping(value = "/sign-up", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public
     @ResponseBody
-    ExampleResponse exampleRest(@ApiParam(value = "example rest request") @RequestBody ExampleRequest exampleRequest) throws ExampleException {
+    ExampleResponse exampleRest(@ApiParam(value = "example rest request") @RequestBody ExampleRequest exampleRequest){
         logger.debug("exampleRest method start");
         ExampleInput exampleInput = mapperFacade.map(exampleRequest,ExampleInput.class);
         exampleService.exampleServiceSave(exampleInput);
         logger.debug("exampleRest method finish");
         return new ExampleResponse();
+    }
+
+
+    @ApiOperation(value = "example rest exeption handling",
+            notes = "example rest exeption handling notes.<br/>")
+    @RequestMapping(value = "/handleException", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public
+    @ResponseBody
+    void exampleRest() throws ExampleException {
+        logger.debug("exampleRest method start");
+        exampleService.exampleExceptionService();
+        logger.debug("exampleRest method finish");
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.exeption.ExampleException;
 import com.example.model.Example;
 import com.example.model.input.ExampleInput;
 import com.example.model.output.ExampleOutput;
@@ -61,5 +62,10 @@ public class ExampleServiceImpl implements ExampleService {
         final Optional<ExampleOutput> exampleOutputOptional = Optional.ofNullable(exampleOutput);
         logger.debug("exampleServiceGetOne method finish");
         return exampleOutputOptional;
+    }
+
+    @Override
+    public void exampleExceptionService() throws ExampleException {
+        throw new ExampleException("Example Exception");
     }
 }
