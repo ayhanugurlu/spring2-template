@@ -1,7 +1,0 @@
-com\example\model\input\ExampleInput.class
-com\example\model\output\ExampleOutput.class
-com\example\ExampleExtServiceImpl.class
-com\example\mapper\ExampleExtServiceMapper.class
-com\example\ExampleServiceImpl.class
-com\example\mapper\ExampleServiceMapper.class
-com\example\ExampleService.class
