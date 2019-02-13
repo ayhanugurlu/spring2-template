@@ -1,7 +1,6 @@
 package com.example;
 
-import com.au.example.ExtService;
-import com.au.example.model.output.ExampleExtOutput;
+import com.example.model.output.ExampleExtOutput;
 import com.example.model.output.ExampleOutput;
 import ma.glasnost.orika.MapperFacade;
 import org.slf4j.Logger;

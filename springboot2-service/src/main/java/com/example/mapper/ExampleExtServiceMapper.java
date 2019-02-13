@@ -1,8 +1,6 @@
 package com.example.mapper;
 
-import com.au.example.model.output.ExampleExtOutput;
-import com.example.model.Example;
-import com.example.model.input.ExampleInput;
+import com.example.model.output.ExampleExtOutput;
 import com.example.model.output.ExampleOutput;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.ConfigurableMapper;

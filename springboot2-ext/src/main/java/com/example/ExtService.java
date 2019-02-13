@@ -1,7 +1,6 @@
-package com.au.example;
+package com.example;
 
-import com.au.example.model.input.ExampleExtInput;
-import com.au.example.model.output.ExampleExtOutput;
+import com.example.model.output.ExampleExtOutput;
 
 import java.util.Optional;
 

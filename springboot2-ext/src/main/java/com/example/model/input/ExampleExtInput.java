@@ -1,9 +1,9 @@
-package com.au.example.model.output;
+package com.example.model.input;
 
 /**
  * Created by Ayhan.Ugurlu on 08/02/2019
  */
-public class ExampleExtOutput {
+public class ExampleExtInput {
     String var1;
     String var2;
     String var3;
