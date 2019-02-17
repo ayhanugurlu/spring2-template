@@ -6,22 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-starter" />
-        <module name="springboot-starter" />
         <module name="springboot2-data" />
         <module name="springboot2-ext" />
         <module name="springboot2-rest" />
         <module name="springboot2-service" />
+        <module name="springboot2-starter" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="spring-boot-starter" target="1.8" />
+    <bytecodeTargetLevel>
       <module name="spring2-template" target="1.8" />
-      <module name="springboot-starter" target="1.8" />
       <module name="springboot2-data" target="1.8" />
       <module name="springboot2-ext" target="1.8" />
       <module name="springboot2-rest" target="1.8" />
       <module name="springboot2-service" target="1.8" />
+      <module name="springboot2-starter" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

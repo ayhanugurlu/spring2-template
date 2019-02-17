@@ -1,15 +1,15 @@
 package com.example.rest;
 
-import com.example.Springboot2RestApplication;
-import com.example.model.request.ExampleRequest;
-import com.example.model.response.ExampleResponse;
+
+import com.example.rest.model.response.ExampleResponse;
+import com.example.TemplateApplication;
+import com.example.rest.model.request.ExampleRequest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import  org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.*;
-import org.springframework.http.client.support.BasicAuthorizationInterceptor;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 /**
@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
  */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Springboot2RestApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = TemplateApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ExampleRestControllerTest {
 
     HttpHeaders headers = new HttpHeaders();

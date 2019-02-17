@@ -1,13 +1,11 @@
 package com.example.rest;
 
-
-
-import com.example.ExampleService;
-import com.example.exeption.ExampleException;
-import com.example.model.input.ExampleInput;
-import com.example.model.output.ExampleOutput;
-import com.example.model.request.ExampleRequest;
-import com.example.model.response.ExampleResponse;
+import com.example.rest.model.request.ExampleRequest;
+import com.example.rest.model.response.ExampleResponse;
+import com.example.service.ExampleService;
+import com.example.service.exeption.ExampleException;
+import com.example.service.model.input.ExampleInput;
+import com.example.service.model.output.ExampleOutput;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import ma.glasnost.orika.MapperFacade;
@@ -18,8 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Ayhan.Ugurlu on 08/02/2019
